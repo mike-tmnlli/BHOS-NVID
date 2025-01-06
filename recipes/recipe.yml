@@ -17,25 +17,20 @@ modules:
       repo-name: flathub
       repo-title: "Flathub (System)"
       install:
-        - app.polychromatic.controller
         - com.bitwarden.desktop
         - com.github.rafostar.Clapper
         - com.github.tchx84.Flatseal
         - com.mattjakeman.ExtensionManager
-        - com.obsproject.Studio
-        - com.rustdesk.RustDesk
+        - com.valvesoftware.Steam.Utility.InhibitScreensaver
+        - com.valvesoftware.Steam.CompatibilityTool.Proton-GE
+        - com.valvesoftware.Steam
         - com.visualstudio.code
         - io.github.alainm23.planify
         - io.github.flattool.Ignition
         - io.github.flattool.Warehouse
-        - io.missioncenter.MissionCenter
-        - io.typora.Typora
         - it.mijorus.gearlever
         - md.obsidian.Obsidian
-        - org.ardour.Ardour
         - org.audacityteam.Audacity
-        - org.blender.Blender
-        - org.darktable.Darktable
         - org.gimp.GIMP
         - org.gimp.GIMP.Manual
         - org.gnome.baobab
@@ -71,7 +66,7 @@ modules:
     repos:
     - https://copr.fedorainfracloud.org/coprs/jerrycasiano/FontManager/repo/fedora-40/jerrycasiano-FontManager-fedora-41.repo
     - https://copr.fedorainfracloud.org/coprs/kylegospo/bazzite-multilib/repo/fedora-40/kylegospo-bazzite-multilib-fedora-41.repo?arch=x86_64
-    - https://openrazer.github.io/hardware:razer.repo
+#    - https://openrazer.github.io/hardware:razer.repo
     install:
     - extest
     - fastfetch
