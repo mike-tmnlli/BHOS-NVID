@@ -1,7 +1,7 @@
 ---
 # yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
-name: BHOS-NVID-GTS
-description: BlueHatOS-GTS w/ NVIDIA support
+name: BHOS-NVID
+description: BlueHatOS w/ NVIDIA support
 base-image: ghcr.io/ublue-os/silverblue-nvidia
 image-version: 41
 
