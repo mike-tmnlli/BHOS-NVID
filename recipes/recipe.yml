@@ -21,6 +21,8 @@ modules:
         - com.github.rafostar.Clapper
         - com.github.tchx84.Flatseal
         - com.mattjakeman.ExtensionManager
+        - com.obsproject.Studio
+        - com.rustdesk.RustDesk
         - com.valvesoftware.Steam.Utility.InhibitScreensaver
         - com.valvesoftware.Steam.CompatibilityTool.Proton-GE
         - com.valvesoftware.Steam
@@ -30,7 +32,10 @@ modules:
         - io.github.flattool.Warehouse
         - it.mijorus.gearlever
         - md.obsidian.Obsidian
+        - org.ardour.Ardour
         - org.audacityteam.Audacity
+        - org.blender.Blender
+        - org.darktable.Darktable
         - org.gimp.GIMP
         - org.gimp.GIMP.Manual
         - org.gnome.baobab
