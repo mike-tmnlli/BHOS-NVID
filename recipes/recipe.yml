@@ -76,10 +76,6 @@ modules:
     - extest
     - fastfetch
     - font-manager
-    - gamescope
-    - openrazer-meta
-    - steam
-    - steam-devices
     remove:
     - firefox
     - firefox-langpacks
