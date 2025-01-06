@@ -9,9 +9,6 @@ modules:
   - type: akmods
     install:
     - openrazer
-    - v4l2loopback
-    - xpadneo
-    - xone
 
   - type: default-flatpaks
     notify: true
