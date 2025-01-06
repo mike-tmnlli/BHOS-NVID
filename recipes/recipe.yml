@@ -1,44 +1,90 @@
 ---
 # yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
-# image will be published to ghcr.io/<user>/<name>
-name: BHOS-NVID
-# description will be included in the image's metadata
-description: This is my personal OS image.
+name: BHOS-NVID-GTS
+description: BlueHatOS-GTS w/ NVIDIA support
+base-image: ghcr.io/ublue-os/silverblue-nvidia
+image-version: 40
 
-# the base image to build on top of (FROM) and the version tag to use
-base-image: ghcr.io/ublue-os/silverblue-main
-image-version: 41 # latest is also supported if you want new updates ASAP
-
-# module configuration, executed in order
-# you can include multiple instances of the same module
 modules:
-  - type: files
-    files:
-      - source: system
-        destination: / # copies files/system/* (* means everything inside it) into your image's root folder /
+  - type: akmods
+    install:
+    - openrazer
+    - v4l2loopback
+    - xpadneo
+    - xone
+
+  - type: default-flatpaks
+    notify: true
+    system:
+      repo-url: https://dl.flathub.org/repo/flathub.flatpakrepo
+      repo-name: flathub
+      repo-title: "Flathub (System)"
+      install:
+        - app.polychromatic.controller
+        - com.bitwarden.desktop
+        - com.github.rafostar.Clapper
+        - com.github.tchx84.Flatseal
+        - com.mattjakeman.ExtensionManager
+        - com.obsproject.Studio
+        - com.rustdesk.RustDesk
+        - com.visualstudio.code
+        - io.github.alainm23.planify
+        - io.github.flattool.Ignition
+        - io.github.flattool.Warehouse
+        - io.missioncenter.MissionCenter
+        - io.typora.Typora
+        - it.mijorus.gearlever
+        - md.obsidian.Obsidian
+        - org.ardour.Ardour
+        - org.audacityteam.Audacity
+        - org.blender.Blender
+        - org.darktable.Darktable
+        - org.gimp.GIMP
+        - org.gimp.GIMP.Manual
+        - org.gnome.baobab
+        - org.gnome.Calculator
+        - org.gnome.Calendar
+        - org.gnome.Characters
+        - org.gnome.clocks
+        - org.gnome.Connections
+        - org.gnome.Contacts
+        - org.gnome.font-viewer
+        - org.gnome.Logs
+        - org.gnome.Loupe
+        - org.gnome.NautilusPreviewer
+        - org.gnome.Papers
+        - org.gnome.TextEditor
+        - org.inkscape.Inkscape
+        - org.libreoffice.LibreOffice
+        - org.mozilla.firefox
+        - org.pipewire.Helvum
+        - page.codeberg.libre_menu_editor.LibreMenuEditor
+
+  - type: gnome-extensions
+    install:
+    - Alphabetical App Grid
+    - AppIndicator and KStatusNotifierItem Support
+    - Blur my Shell
+    - Dash to Panel
+    - GameMode Shell Extension
+    - Gtk4 Desktop Icons NG (DING)
+    - Tiling Shell
 
   - type: rpm-ostree
     repos:
-      - https://copr.fedorainfracloud.org/coprs/atim/starship/repo/fedora-%OS_VERSION%/atim-starship-fedora-%OS_VERSION%.repo
+    - https://copr.fedorainfracloud.org/coprs/jerrycasiano/FontManager/repo/fedora-40/jerrycasiano-FontManager-fedora-40.repo
+    - https://copr.fedorainfracloud.org/coprs/kylegospo/bazzite-multilib/repo/fedora-40/kylegospo-bazzite-multilib-fedora-40.repo?arch=x86_64
+    - https://openrazer.github.io/hardware:razer.repo
     install:
-      - micro
-      - starship
+    - extest
+    - fastfetch
+    - font-manager
+    - gamescope
+    - openrazer-meta
+    - steam
+    - steam-devices
     remove:
-      # example: removing firefox (in favor of the flatpak)
-      # "firefox" is the main package, "firefox-langpacks" is a dependency
-      - firefox
-      - firefox-langpacks # also remove firefox dependency (not required for all packages, this is a special case)
-
-  - type: default-flatpaks
-    notify: true # Send notification after install/uninstall is finished (true/false)
-    system:
-      # If no repo information is specified, Flathub will be used by default
-      install:
-        - org.mozilla.firefox
-        - org.gnome.Loupe
-      remove:
-        - org.gnome.eog
-    user: {} # Also add Flathub user repo, but no user packages
-
-  - type: signing # this sets up the proper policy & signing files for signed images to work fully
-
+    - firefox
+    - firefox-langpacks
+  
+  - type: signing
