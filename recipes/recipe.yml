@@ -6,10 +6,6 @@ base-image: ghcr.io/ublue-os/silverblue-nvidia
 image-version: latest
 
 modules:
-#  - type: akmods
-#    install:
-#    - openrazer
-
   - type: default-flatpaks
     notify: true
     system:
@@ -70,10 +66,7 @@ modules:
   - type: rpm-ostree
     repos:
     - https://copr.fedorainfracloud.org/coprs/jerrycasiano/FontManager/repo/fedora-40/jerrycasiano-FontManager-fedora-41.repo
-    - https://copr.fedorainfracloud.org/coprs/kylegospo/bazzite-multilib/repo/fedora-40/kylegospo-bazzite-multilib-fedora-41.repo?arch=x86_64
-#    - https://openrazer.github.io/hardware:razer.repo
     install:
-    - extest
     - fastfetch
     - font-manager
     remove:
