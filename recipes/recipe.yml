@@ -6,9 +6,9 @@ base-image: ghcr.io/ublue-os/silverblue-nvidia
 image-version: latest
 
 modules:
-  - type: akmods
-    install:
-    - openrazer
+#  - type: akmods
+#    install:
+#    - openrazer
 
   - type: default-flatpaks
     notify: true
