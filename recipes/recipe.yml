@@ -7,7 +7,7 @@ image-version: latest
 
 modules:
   - type: default-flatpaks
-    notify: true
+    notify: false
     system:
       repo-url: https://dl.flathub.org/repo/flathub.flatpakrepo
       repo-name: flathub
@@ -19,6 +19,7 @@ modules:
         - com.mattjakeman.ExtensionManager
         - com.obsproject.Studio
         - com.rustdesk.RustDesk
+        - com.stremio.Stremio
         - com.valvesoftware.Steam.Utility.InhibitScreensaver
         - com.valvesoftware.Steam.CompatibilityTool.Proton-GE
         - com.valvesoftware.Steam
