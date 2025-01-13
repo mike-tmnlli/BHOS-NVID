@@ -2,8 +2,8 @@
 # yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
 name: BHOS-NVID
 description: BlueHatOS w/ NVIDIA support
-base-image: ghcr.io/ublue-os/silverblue-nvidia
-image-version: latest
+base-image: ghcr.io/ublue-os/kinoite-nvidia
+image-version: 41
 
 modules:
   - type: default-flatpaks
@@ -13,63 +13,37 @@ modules:
       repo-name: flathub
       repo-title: "Flathub (System)"
       install:
-        - com.bitwarden.desktop
-        - com.github.rafostar.Clapper
-        - com.github.tchx84.Flatseal
-        - com.mattjakeman.ExtensionManager
+        - app.polychromatic.controller
+        - com.heroicgameslauncher.hgl
         - com.obsproject.Studio
         - com.rustdesk.RustDesk
         - com.stremio.Stremio
-        - com.valvesoftware.Steam.Utility.InhibitScreensaver
-        - com.valvesoftware.Steam.CompatibilityTool.Proton-GE
+        - com.todoist.Todoist
         - com.valvesoftware.Steam
+        - com.valvesoftware.Steam.Utility.InhibitScreensaver
         - com.visualstudio.code
-        - io.github.alainm23.planify
-        - io.github.flattool.Ignition
-        - io.github.flattool.Warehouse
-        - it.mijorus.gearlever
+        - io.github.antimicrox.antimicrox
         - md.obsidian.Obsidian
+        - net.davidotek.pupgui2
+        - net.retrodeck.retrodeck
         - org.ardour.Ardour
         - org.audacityteam.Audacity
         - org.blender.Blender
         - org.darktable.Darktable
         - org.gimp.GIMP
-        - org.gimp.GIMP.Manual
-        - org.gnome.baobab
-        - org.gnome.Calculator
-        - org.gnome.Calendar
-        - org.gnome.Characters
-        - org.gnome.clocks
-        - org.gnome.Connections
-        - org.gnome.Contacts
-        - org.gnome.font-viewer
-        - org.gnome.Logs
-        - org.gnome.Loupe
-        - org.gnome.NautilusPreviewer
-        - org.gnome.Papers
-        - org.gnome.TextEditor
         - org.inkscape.Inkscape
+        - org.kde.gwenview
+        - org.kde.kcalc
+        - org.kde.kdenlive
+        - org.kde.krita
+        - org.kde.okular
+        - org.kde.skanpage
         - org.libreoffice.LibreOffice
         - org.mozilla.firefox
-        - org.pipewire.Helvum
-        - page.codeberg.libre_menu_editor.LibreMenuEditor
-
-  - type: gnome-extensions
-    install:
-    - Alphabetical App Grid
-    - AppIndicator and KStatusNotifierItem Support
-    - Blur my Shell
-    - Dash to Panel
-    - GameMode Shell Extension
-    - Gtk4 Desktop Icons NG (DING)
-    - Tiling Shell
 
   - type: rpm-ostree
-    repos:
-    - https://copr.fedorainfracloud.org/coprs/jerrycasiano/FontManager/repo/fedora-40/jerrycasiano-FontManager-fedora-41.repo
     install:
     - fastfetch
-    - font-manager
     remove:
     - firefox
     - firefox-langpacks
