@@ -15,6 +15,7 @@ modules:
       install:
         - app.polychromatic.controller
         - com.heroicgameslauncher.hgl
+        - com.leinardi.gwe
         - com.obsproject.Studio
         - com.rustdesk.RustDesk
         - com.stremio.Stremio
@@ -45,6 +46,7 @@ modules:
   - type: rpm-ostree
     install:
     - fastfetch
+    - plasma-workspace-x11
     remove:
     - firefox
     - firefox-langpacks
