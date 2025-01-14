@@ -15,7 +15,6 @@ modules:
       install:
         - app.polychromatic.controller
         - com.heroicgameslauncher.hgl
-        - com.leinardi.gwe
         - com.obsproject.Studio
         - com.rustdesk.RustDesk
         - com.stremio.Stremio
