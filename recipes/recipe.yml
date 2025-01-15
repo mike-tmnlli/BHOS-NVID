@@ -7,7 +7,7 @@ image-version: 41
 
 modules:
   - type: default-flatpaks
-    notify: false
+    notify: true
     system:
       repo-url: https://dl.flathub.org/repo/flathub.flatpakrepo
       repo-name: flathub
